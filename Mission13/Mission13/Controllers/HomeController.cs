@@ -17,33 +17,38 @@ namespace Mission13.Controllers
         private IBowlersRepository _repo { get; set; }
 
         //Constructor
-        public HomeController(IBowlersRepository temp)
+        //public HomeController(IBowlersRepository temp)
+        //{
+        //    _repo = temp;
+        //}
+
+        public HomeController(BowlersDbContext temp)
         {
-            _repo = temp;
+            daContext = temp;
         }
 
         public IActionResult Index()
         {
-            //repository method
-            var temporaryList = _repo.Bowlers
-                //.Where(x => x.Team == bowlerTeam || bowlerTeam == null)
-                .Include(x => x.Team)
-                .OrderBy(x => x.BowlerLastName)
-                .ToList();
-
-            //Context method
-            //var temporaryList = daContext.Bowlers
-            //    .FromSqlRaw("SELECT * FROM Bowlers INNER JOIN Teams on Bowlers.BowlerID = Teams.TeamID")
+            ////repository method
+            //var temporaryList = _repo.Bowlers
             //    //.Where(x => x.Team == bowlerTeam || bowlerTeam == null)
+            //    .Include(x => x.Team)
             //    .OrderBy(x => x.BowlerLastName)
             //    .ToList();
+
+            //Context method
+            var temporaryList = daContext.Bowlers
+                .FromSqlRaw("SELECT * FROM Bowlers")
+                //.Where(x => x.Team == bowlerTeam || bowlerTeam == null)
+                .OrderBy(x => x.BowlerLastName)
+                .ToList();
 
             return View(temporaryList);
         }
 
         public IActionResult Manage()
         {
-            var temporaryList = _repo.Bowlers
+            var temporaryList = daContext.Bowlers
                 .ToList();
 
             return View(temporaryList);
