@@ -27,7 +27,7 @@ using Mission13.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d0bffa578ed1701579e64bc51cd19f5345f89a61", @"/Views/Home/Manage.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5062c50508e723399f66e5ee22e2d7108c74e729", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"43d66170eda39448e8bbeaab99a630e8ccdb701b", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Manage : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Bowler>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

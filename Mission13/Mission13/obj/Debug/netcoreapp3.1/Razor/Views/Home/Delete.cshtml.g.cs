@@ -27,7 +27,7 @@ using Mission13.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2aaa1d7108fdfe972385d8588180a2b74a9442fc", @"/Views/Home/Delete.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5062c50508e723399f66e5ee22e2d7108c74e729", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"43d66170eda39448e8bbeaab99a630e8ccdb701b", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Delete : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Bowler>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "hidden", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

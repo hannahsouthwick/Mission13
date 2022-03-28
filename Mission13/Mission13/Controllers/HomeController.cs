@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission13.Models;
 
@@ -25,11 +26,16 @@ namespace Mission13.Controllers
         {
             //repository method
             var temporaryList = _repo.Bowlers
+                //.Where(x => x.Team == bowlerTeam || bowlerTeam == null)
+                .Include(x => x.Team)
+                .OrderBy(x => x.BowlerLastName)
                 .ToList();
 
             //Context method
-            //var temporaryList = _context.Recipes
-            //    .FromSqlRaw("SELECT * FROM Recipes WHERE RecipeTitle LIKE 'a%'")
+            //var temporaryList = daContext.Bowlers
+            //    .FromSqlRaw("SELECT * FROM Bowlers INNER JOIN Teams on Bowlers.BowlerID = Teams.TeamID")
+            //    //.Where(x => x.Team == bowlerTeam || bowlerTeam == null)
+            //    .OrderBy(x => x.BowlerLastName)
             //    .ToList();
 
             return View(temporaryList);
@@ -72,15 +78,6 @@ namespace Mission13.Controllers
         public IActionResult Delete(Bowler b)
         {
             daContext.Remove(b);
-            //b.BowlerID = 0;
-            //b.BowlerFirstName = null;
-            //b.BowlerMiddleInit = null;
-            //b.BowlerLastName = null;
-            //b.BowlerAddress = null;
-            //b.BowlerCity = null;
-            //b.BowlerState = null;
-            //b.BowlerZip = null;
-            //b.BowlerPhoneNumber = null;
 
             daContext.Update(b);
             daContext.SaveChanges();
@@ -91,8 +88,7 @@ namespace Mission13.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-
-            //var addition = daContext.Bowlers.Single(x => x.BowlerID == bowlerid);
+            ViewBag.Teams = daContext.Teams.ToList();
 
             return View();
         }
@@ -103,14 +99,14 @@ namespace Mission13.Controllers
 
             if (ModelState.IsValid)
             {
-                daContext.Update(b);
+                daContext.Add(b);
                 daContext.SaveChanges();
 
                 return RedirectToAction("Index");
             }
             else
             {
-                ViewBag.Bowlers = daContext.Bowlers.ToList();
+                ViewBag.Teams = daContext.Teams.ToList();
 
                 return View();
             }
