@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Add Page";
+
+}
+
+@model Bowler
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Add Bowler Page</h1>
+</div>
+
+<form method="post" asp-controller="Home" asp-action="Add">
+
+    <div asp-validation-summary="All"></div>
+
+    <h4>Please Fill Out The Fields Below to Add a New Bowler</h4>
+
+    <div class="form-group">
+        <input type="hidden" asp-for="@Model.BowlerID" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerFirstName">First Name:</label>
+        <input asp-for="@Model.BowlerFirstName" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerMiddleInit">Middle Initial:</label>
+        <input asp-for="@Model.BowlerMiddleInit" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerLastName">Last Name:</label>
+        <input asp-for="@Model.BowlerLastName" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerAddress">Address:</label>
+        <input asp-for="@Model.BowlerAddress" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerCity">City:</label>
+        <input asp-for="@Model.BowlerCity" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerState">State:</label>
+        <input asp-for="@Model.BowlerState" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerZip">Zip:</label>
+        <input asp-for="@Model.BowlerZip" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.BowlerPhoneNumber">Phone Number:</label>
+        <input asp-for="@Model.BowlerPhoneNumber" />
+    </div>
+
+    <div>
+        <input class="btn btn-primary" type="submit" value="Add" />
+    </div>
+
+
+</form>

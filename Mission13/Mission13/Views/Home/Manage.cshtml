@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Manage Bowlers Page";
+}
+@model List<Bowler>
+
+<h1>Manage Bowlers</h1>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="font-weight-bold">
+        <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Middle Initial</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+        <tr>
+            <td>@b.BowlerLastName</td>
+            <td>@b.BowlerFirstName</td>
+            <td>@b.BowlerMiddleInit</td>
+            <td>@b.BowlerAddress</td>
+            <td>@b.BowlerCity</td>
+            <td>@b.BowlerState</td>
+            <td>@b.BowlerZip</td>
+            <td>@b.BowlerPhoneNumber</td>
+
+            <td><a asp-controller="Home" asp-action="Edit" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
+            <td><a asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@b.BowlerID">Delete</a></td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+<div class="text-center">
+    <button type="button"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Add">Add New Bowler</a></button>
+</div>
