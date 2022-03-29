@@ -25,7 +25,7 @@ namespace Mission13.Components
         public IViewComponentResult Invoke()
         {
             //grabbing something from the URL and it might be null ?
-            ViewBag.SelectedTeam = RouteData?.Values["TeamName"];
+            ViewBag.SelectedTeam = RouteData?.Values["teamName"];
 
             var teams = daContext.Teams
                 .Select(x => x.TeamName)

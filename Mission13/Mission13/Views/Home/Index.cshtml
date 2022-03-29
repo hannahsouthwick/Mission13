@@ -8,9 +8,9 @@
 <ul>
     @foreach (var b in Model)
     {
-        <li>@b.BowlerLastName , @b.BowlerFirstName - @b.BowlerMiddleInit</li>
-        <li>@b.BowlerAddress @b.BowlerCity , @b.BowlerState - @b.BowlerZip</li>
-        <li>(@b.BowlerPhoneNumber)</li>
+        <li><i>Name:</i> @b.BowlerLastName, @b.BowlerFirstName - @b.BowlerMiddleInit</li>
+        <li><i>Address:</i> @b.BowlerAddress @b.BowlerCity, @b.BowlerState - @b.BowlerZip</li>
+        <li><i>Phone Number:</i> (@b.BowlerPhoneNumber)</li>
         <br />
     }
 </ul>

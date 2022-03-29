@@ -4,13 +4,13 @@
 @model IEnumerable<string>
 
 <div class="d-grid gap-2">
-    <a asp-controller="Home" asp-action="Index" asp-route-TeamName="" class="btn btn-outline-secondary">Home</a><br />
+    <a asp-controller="Home" asp-action="Index" asp-route-teamName="" class="btn btn-outline-secondary">Home</a><br />
     <br />
 
     @foreach (string t in Model)
     {
         @*shortcut for if statement determining button appearances*@
-        <a asp-controller="Home" asp-action="Index" asp-route-TeamName="@t"
+        <a asp-controller="Home" asp-action="Index" asp-route-teamName="@t"
            class="btn @(ViewBag.SelectedTeam == t ? "btn-primary" : "btn-outline-secondary")">@t</a><br /><br />
     }
 </div>
