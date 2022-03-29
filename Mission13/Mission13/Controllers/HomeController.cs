@@ -27,7 +27,7 @@ namespace Mission13.Controllers
             daContext = temp;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string teamName)
         {
             ////repository method
             //var temporaryList = _repo.Bowlers
@@ -39,7 +39,8 @@ namespace Mission13.Controllers
             //Context method
             var temporaryList = daContext.Bowlers
                 .FromSqlRaw("SELECT * FROM Bowlers")
-                //.Where(x => x.Team == bowlerTeam || bowlerTeam == null)
+                .Include(x => x.Team)
+                .Where(t => t.Team.TeamName == teamName || teamName == null)
                 .OrderBy(x => x.BowlerLastName)
                 .ToList();
 

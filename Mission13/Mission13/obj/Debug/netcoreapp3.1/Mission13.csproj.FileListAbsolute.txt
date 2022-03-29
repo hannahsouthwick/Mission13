@@ -57,3 +57,4 @@
 /Users/hannahsouthwick/Documents/GitHub/Mission13/Mission13/Mission13/obj/Debug/netcoreapp3.1/Mission13.genruntimeconfig.cache
 /Users/hannahsouthwick/Documents/GitHub/Mission13/Mission13/Mission13/obj/Debug/netcoreapp3.1/Razor/Views/Home/Delete.cshtml.g.cs
 /Users/hannahsouthwick/Documents/GitHub/Mission13/Mission13/Mission13/obj/Debug/netcoreapp3.1/Razor/Views/Home/Add.cshtml.g.cs
+/Users/hannahsouthwick/Documents/GitHub/Mission13/Mission13/Mission13/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/Teams/Default.cshtml.g.cs
