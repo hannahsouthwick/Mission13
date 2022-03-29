@@ -17,6 +17,7 @@
             <th>State</th>
             <th>Zip</th>
             <th>Phone Number</th>
+            <th>ID</th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +32,7 @@
             <td>@b.BowlerState</td>
             <td>@b.BowlerZip</td>
             <td>@b.BowlerPhoneNumber</td>
+            <td>@b.BowlerID</td>
 
             <td><a asp-controller="Home" asp-action="Edit" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
             <td><a asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@b.BowlerID">Delete</a></td>

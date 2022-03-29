@@ -11,13 +11,16 @@
 
 <form method="post" asp-controller="Home" asp-action="Add">
 
-    <div asp-validation-summary="All"></div>
+    @*<div asp-validation-summary="All"></div>*@
 
     <h4>Please Fill Out The Fields Below to Add a New Bowler</h4>
 
-    @*<div class="form-group">
+    @if (ViewBag.form == "edit")
+    {
+        <div class="form-group">
             <input type="hidden" asp-for="@Model.BowlerID" />
-        </div>*@
+        </div>
+    }
 
     <label>Team:</label>
     <select asp-for="TeamID">

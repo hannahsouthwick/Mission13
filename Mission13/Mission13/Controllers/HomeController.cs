@@ -58,8 +58,10 @@ namespace Mission13.Controllers
         public IActionResult Edit(int bowlerid)
         {
             var addition = daContext.Bowlers.Single(x => x.BowlerID == bowlerid);
+            ViewBag.Teams = daContext.Teams.ToList();
+            ViewBag.form = "edit";
 
-            return View("Manage", addition);
+            return View("Add", addition);
         }
 
         [HttpPost]
@@ -94,6 +96,7 @@ namespace Mission13.Controllers
         public IActionResult Add()
         {
             ViewBag.Teams = daContext.Teams.ToList();
+            ViewBag.form = "add";
 
             return View();
         }
