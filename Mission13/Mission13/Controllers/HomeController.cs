@@ -105,7 +105,7 @@ namespace Mission13.Controllers
 
             if (ModelState.IsValid)
             {
-                if (ViewBag.form == "add") { 
+                if (b.BowlerID == 0) { 
                     daContext.Add(b);
                 }
                 else
