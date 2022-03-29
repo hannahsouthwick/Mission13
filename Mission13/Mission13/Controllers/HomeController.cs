@@ -85,8 +85,6 @@ namespace Mission13.Controllers
         public IActionResult Delete(Bowler b)
         {
             daContext.Remove(b);
-
-            daContext.Update(b);
             daContext.SaveChanges();
 
             return RedirectToAction("Manage");
@@ -107,7 +105,14 @@ namespace Mission13.Controllers
 
             if (ModelState.IsValid)
             {
-                daContext.Add(b);
+                if (ViewBag.form == "add") { 
+                    daContext.Add(b);
+                }
+                else
+                {
+                    daContext.Update(b);
+
+                }
                 daContext.SaveChanges();
 
                 return RedirectToAction("Index");
