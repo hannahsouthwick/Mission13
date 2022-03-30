@@ -29,6 +29,7 @@ namespace Mission13.Controllers
 
         public IActionResult Index(string teamName)
         {
+            ViewBag.name = RouteData?.Values["teamName"];
             ////repository method
             //var temporaryList = _repo.Bowlers
             //    //.Where(x => x.Team == bowlerTeam || bowlerTeam == null)
