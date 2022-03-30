@@ -61,6 +61,7 @@ namespace Mission13
                 //endpoints.MapControllerRoute(
                 //    name: "default",
                 //    pattern: "{controller=Home}/{action=Index}/{id?}");
+                // same thing as endpoints.MapDefaultControllerRoute();
 
                 endpoints.MapControllerRoute("team",
                     "{teamName}",
